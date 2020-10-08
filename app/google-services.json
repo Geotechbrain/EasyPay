@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "65536430559",
+    "firebase_url": "https://easypay-e8889.firebaseio.com",
+    "project_id": "easypay-e8889",
+    "storage_bucket": "easypay-e8889.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65536430559:android:8ac569841c2cc10161346a",
+        "android_client_info": {
+          "package_name": "com.geodeveloper.easypay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65536430559-ov9fm7fifhp6br2v4c0qakffim1apeu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBglkhmOnbk37U6jpkYnNHevA0QG9I6CzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65536430559-ov9fm7fifhp6br2v4c0qakffim1apeu6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

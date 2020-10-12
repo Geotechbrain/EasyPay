@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">EasyPay</string>
+    <string name="onBoard_txt_header">Payment Made Easy</string>
+    <string name="onBoard_txt_body">Grow your business with EasyPay.
+        The smartest and easiest way to pay bills and make payments
+        online anywhere in the world
+    </string>
+    <string name="btnRegister_txt">Register</string>
+    <string name="btnLogin_txt">Login</string>
+    <string name="onBoardImg">OnBoarding Activity Image</string>
+    <string name="splash_screen_txt">Splash Screen Image</string>
+    <string name="splash_footer_txt">Pay your bills seamlessly</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="button_next">Next</string>
+    <string name="button_cancel">Cancel</string>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_activity_logo_img">EasyPay Logo on Login Activity</string>
+    <string name="register_label_txt">REGISTER</string>
+    <string name="fullName_txt_hint">Fullname</string>
+    <string name="register_btn_txt">Create Account</string>
+    <string name="passsword_field_helper_txt">Enter Password</string>
+    <string name="fullName_field_helper_txt">Fullname</string>
+    <string name="emailfield_helper_txt">Email</string>
+    <string name="confirm_password_helper_txt">Confirm Password</string>
 </resources>

@@ -31,5 +31,6 @@
     <string name="passsword_field_helper_txt">Enter Password</string>
     <string name="fullName_field_helper_txt">Fullname</string>
     <string name="emailfield_helper_txt">Email</string>
+    <string name="numberfield_helper_txt">Number</string>
     <string name="confirm_password_helper_txt">Confirm Password</string>
 </resources>

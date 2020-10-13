@@ -6,6 +6,7 @@ object Constants {
     const val apiAuth = "api_auth_credentials"
     const val live = "live"
     const val test = "test"
+    const val users = "user"
 
 
     //charges

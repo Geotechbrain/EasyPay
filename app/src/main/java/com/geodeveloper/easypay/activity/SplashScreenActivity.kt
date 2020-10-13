@@ -9,7 +9,7 @@ import com.geodeveloper.easypay.R
 
 class SplashScreenActivity : AppCompatActivity() {
     private var mDelayHandler: Handler? = null
-    private val SPLASH_DELAY: Long = 5000
+    private val SPLASH_DELAY: Long = 300
     private val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
             startActivity(Intent(applicationContext, OnBoardActivity::class.java))

@@ -44,13 +44,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:hint="@string/hint_username"
+
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:id="@+id/login_email"
+                android:hint="@string/emailfield_helper_txt"
                 android:inputType="text"
                 android:maxLines="1" />
 
@@ -61,14 +62,15 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input"
             style="@style/Widget.EasyPay.TextInputLayout"
-            android:hint="@string/hint_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
+            app:passwordToggleEnabled="true"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_edit_text"
+                android:hint="@string/hint_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"/>

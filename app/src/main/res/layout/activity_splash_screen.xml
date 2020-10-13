@@ -22,14 +22,13 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="16dp"
-            app:srcCompat="@drawable/easypay_logo"
+            android:src="@drawable/easypay_logo"
             android:contentDescription="@string/splash_screen_txt" />
 
         <ImageView
             android:id="@+id/img_trade_mark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
         </ImageView>
     </LinearLayout>
 

@@ -34,8 +34,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:text="@string/register_label_txt"
-            android:textAlignment="center"
-            android:textAppearance="@style/Text_Title_Large" />
+            android:textAppearance="@style/Text_Title_Large"
+            />
 
 
 

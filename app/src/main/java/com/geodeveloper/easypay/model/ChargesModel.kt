@@ -1,0 +1,20 @@
+package com.geodeveloper.easypay.model
+class ChargesModel(val FLUTTERWAVE_NGN_CHARGE_PERCENT: String = "0",
+                   val EASYPAY_NGN_CHARGE_PERCENT: String = "0",
+                   val FLUTTERWAVE_INTERNATIONAL_PERCENT: String = "0",
+                   val EASYPAY_INTERNATIONAL_PERCENT: String = "0",
+                   val FLUTTERWAVE_MAX_TRANSACTION_FEE: String = "0",
+                   val EASYPAY_MAX_TRANSACTION_FEE: String = "0",
+                   val TV_PAYMENT_LESS_THAN_1000_CONVENIENCE_FEE: String = "",
+                   val TV_PAYMENT_BETWEEN_1000_AND_5000_CONVENIENCE_FEE: String = "",
+                   val TV_PAYMENT_BETWEEN_5000_AND_20000_CONVENIENCE_FEE: String = "",
+                   val TV_PAYMENT_GREATER_THAN_20000_CONVENIENCE_FEE: String = "",
+                   val ELECTRICITY_PAYMENT_LESS_THAN_1000_CONVENIENCE_FEE: String = "",
+                   val ELECTRICITY_PAYMENT_BETWEEN_1000_AND_5000_CONVENIENCE_FEE: String = "",
+                   val ELECTRICITY_PAYMENT_BETWEEN_5000_AND_20000_CONVENIENCE_FEE: String = "",
+                   val ELECTRICITY_PAYMENT_GREATER_THAN_20000_CONVENIENCE_FEE: String = "",
+                   val EDUCATION_PAYMENT_LESS_THAN_1000_CONVENIENCE_FEE: String = "",
+                   val EDUCATION_PAYMENT_BETWEEN_1000_AND_5000_CONVENIENCE_FEE: String = "",
+                   val EDUCATION_PAYMENT_BETWEEN_5000_AND_20000_CONVENIENCE_FEE: String = "",
+                   val EDUCATION_PAYMENT_GREATER_THAN_20000_CONVENIENCE_FEE: String = "") {
+}

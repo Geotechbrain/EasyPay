@@ -33,4 +33,5 @@
     <string name="emailfield_helper_txt">Email</string>
     <string name="numberfield_helper_txt">Number</string>
     <string name="confirm_password_helper_txt">Confirm Password</string>
+    <string name="splash_screen_app_name">Splash Screen App name</string>
 </resources>

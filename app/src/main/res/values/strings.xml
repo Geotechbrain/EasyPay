@@ -61,6 +61,17 @@
     <string name="continue_btn_txt">continue</string>
     <string name="phone_verify_header_txt">Phone Verification</string>
     <string name="verify_phone_guide">Enter your phone number below a code will be sent to you to verify your number</string>
+    <string name="reset_your_password_header_txt">Reset Your Password</string>
+    <string name="reset_password_guide">To reset your password enter the email you registered with and a new password will be sent to the email you provided</string>
+    <string name="btn_reset_password_txt">reset</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone_field_hint_txt">Phone</string>
+    <string name="title_field_hint_txt">Title</string>
+    <string name="contact_btn_send_txt">Send</string>
+    <string name="contact_contact_us_txt">Contact Us</string>
+    <string name="contact_address_header_txt">Address: XYZ XYZ</string>
+    <string name="contact_call_us_txt">Call Us: 080XXXXXXXX</string>
 
 
 </resources>

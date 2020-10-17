@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.geodeveloper.easypay">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/easypay_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/easypay_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.EasyPay">
+        <activity android:name=".activity.PhoneVerificationActivity"></activity>
+        <activity android:name=".activity.PinActivity" />
+        <activity android:name=".activity.RegistrationActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".activity.OnBoardActivity" />
+        <activity android:name=".activity.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity" />
+    </application>
+
+</manifest>

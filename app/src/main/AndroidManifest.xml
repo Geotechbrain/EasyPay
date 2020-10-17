@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.geodeveloper.easypay">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/easypay_logo"
@@ -10,7 +11,9 @@
         android:roundIcon="@drawable/easypay_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.EasyPay">
-        <activity android:name=".activity.RegistrationActivity"></activity>
+        <activity android:name=".activity.PhoneVerificationActivity"></activity>
+        <activity android:name=".activity.PinActivity" />
+        <activity android:name=".activity.RegistrationActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity
             android:name=".ui.login.LoginActivity"

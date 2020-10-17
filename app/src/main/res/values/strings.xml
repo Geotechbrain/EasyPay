@@ -34,4 +34,33 @@
     <string name="numberfield_helper_txt">Number</string>
     <string name="confirm_password_helper_txt">Confirm Password</string>
     <string name="splash_screen_app_name">Splash Screen App name</string>
+    <string name="menu_search_title">Search</string>
+    <string name="menu_contact_title">contact</string>
+    <string name="content_description_favorite">favorite item menu</string>
+    <string name="favorite">favorite</string>
+    <string name="content_descrip_contact">Contact menu item</string>
+    <string name="bottom_transaction_label">transaction</string>
+    <string name="bottom_help_label">help</string>
+    <string name="bottom_appbar_menu_item">Bottom Appbar menu item</string>
+    <string name="bottom_home_label">home</string>
+    <string name="bottom_user_label">user</string>
+    <string name="create_pin_header_txt">Create Pin</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="star">*</string>
+    <string name="_0">0</string>
+    <string name="hash">#</string>
+    <string name="btn_create_pin_txt">Create</string>
+    <string name="continue_btn_txt">continue</string>
+    <string name="phone_verify_header_txt">Phone Verification</string>
+    <string name="verify_phone_guide">Enter your phone number below a code will be sent to you to verify your number</string>
+
+
 </resources>

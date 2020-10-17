@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/activity_vertical_margin"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    tools:context=".activity.PinActivity">
+
+    <TextView
+        android:id="@+id/tv_create_pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_pin_header_txt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        style="@style/Text_Title_Large"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/pin_input_pad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@id/tv_create_pin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:baselineAligned="false">
+
+        <ImageView
+            android:id="@+id/dot1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/round_fiber_manual_record_24"
+             />
+
+        <ImageView
+            android:id="@+id/dot2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/round_fiber_manual_record_24"
+            />
+
+        <ImageView
+            android:id="@+id/dot3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/round_fiber_manual_record_24"/>
+
+        <ImageView
+            android:id="@+id/dot4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:src="@drawable/round_fiber_manual_record_24"
+            />
+    </LinearLayout>
+
+
+    <GridLayout
+        android:id="@+id/grid_buttons"
+        app:layout_constraintTop_toBottomOf="@id/pin_input_pad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:rowOrderPreserved="true"
+        android:columnOrderPreserved="true"
+        android:rowCount="4"
+        android:columnCount="3">
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_1"
+             />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_2"
+            />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_3" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_4"  />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_5"  />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_6"  />
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_7"  />
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_8"  />
+
+        <Button
+            android:id="@+id/button9"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_9" />
+
+        <Button
+            android:id="@+id/button10"
+            style="@style/InputKeypadStyle"
+            android:text="@string/star" />
+
+        <Button
+            android:id="@+id/button11"
+            style="@style/InputKeypadStyle"
+            android:text="@string/_0"
+             />
+
+        <Button
+            android:id="@+id/button12"
+            style="@style/InputKeypadStyle"
+            android:text="@string/hash"  />
+
+    </GridLayout>
+
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@+id/grid_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="6dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/btn_create_pin_txt"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel_button"
+            style="@style/Widget.EasyPay.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_toStartOf="@id/next_button"
+            android:text="@string/button_cancel" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

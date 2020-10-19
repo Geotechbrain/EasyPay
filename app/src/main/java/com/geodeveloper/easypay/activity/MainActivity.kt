@@ -16,7 +16,11 @@ import com.geodeveloper.easypay.adapter.ServiceAdapter
 import com.geodeveloper.easypay.models.airtime.Airtime
 import com.geodeveloper.easypay.service.ApiService
 import com.geodeveloper.easypay.service.ServiceBuilder
+import com.geodeveloper.paybills.helper.Utils
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import dmax.dialog.SpotsDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
@@ -24,7 +28,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
- /*   lateinit var toolbar: ActionBar*/
+    /*   lateinit var toolbar: ActionBar*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,92 +66,116 @@ class MainActivity : AppCompatActivity() {
 
     private fun getAirtimeList() {
         val apiService = ServiceBuilder.buildService(ApiService::class.java)
-        val requestCall = apiService.getAirtimeService( "airtime")
+        val requestCall = apiService.getAirtimeService("airtime")
         requestCall.enqueue(object : Callback<Airtime> {
             override fun onResponse(call: Call<Airtime>, response: Response<Airtime>) {
                 if (response.isSuccessful) {
                     val itemLists = response.body()!!
                     main_airtimeList.adapter = ServiceAdapter(this@MainActivity, itemLists, Constants.airtime)
-                }else{
-                   Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
                 }
             }
+
             override fun onFailure(call: Call<Airtime>, t: Throwable) {
-                Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
             }
         })
     }
+
     private fun getDataList() {
         val apiService = ServiceBuilder.buildService(ApiService::class.java)
-        val requestCall = apiService.getAirtimeService( "data")
+        val requestCall = apiService.getAirtimeService("data")
         requestCall.enqueue(object : Callback<Airtime> {
             override fun onResponse(call: Call<Airtime>, response: Response<Airtime>) {
                 if (response.isSuccessful) {
                     val itemLists = response.body()!!
                     main_dataList.adapter = ServiceAdapter(this@MainActivity, itemLists, Constants.data)
-                }else{
-                    Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
                 }
             }
+
             override fun onFailure(call: Call<Airtime>, t: Throwable) {
-                Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
-            }
-        })
-    }
-    private fun getEducationList() {
-        val apiService = ServiceBuilder.buildService(ApiService::class.java)
-        val requestCall = apiService.getAirtimeService( "education")
-        requestCall.enqueue(object : Callback<Airtime> {
-            override fun onResponse(call: Call<Airtime>, response: Response<Airtime>) {
-                if (response.isSuccessful) {
-                    val itemLists = response.body()!!
-                    main_educationList.adapter = ServiceAdapter(this@MainActivity, itemLists, Constants.data)
-                }else{
-                    Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
-                }
-            }
-            override fun onFailure(call: Call<Airtime>, t: Throwable) {
-                Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
-            }
-        })
-    }
-    private fun getTVCableList() {
-        val apiService = ServiceBuilder.buildService(ApiService::class.java)
-        val requestCall = apiService.getAirtimeService( "tv-subscription")
-        requestCall.enqueue(object : Callback<Airtime> {
-            override fun onResponse(call: Call<Airtime>, response: Response<Airtime>) {
-                if (response.isSuccessful) {
-                    val itemLists = response.body()!!
-                    main_tvCableList.adapter = ServiceAdapter(this@MainActivity, itemLists, Constants.data)
-                }else{
-                    Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
-                }
-            }
-            override fun onFailure(call: Call<Airtime>, t: Throwable) {
-                Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
-            }
-        })
-    }
-    private fun getElectricity() {
-        val apiService = ServiceBuilder.buildService(ApiService::class.java)
-        val requestCall = apiService.getAirtimeService( "electricity-bill")
-        requestCall.enqueue(object : Callback<Airtime> {
-            override fun onResponse(call: Call<Airtime>, response: Response<Airtime>) {
-                if (response.isSuccessful) {
-                    val itemLists = response.body()!!
-                    main_electricityList.adapter = ServiceAdapter(this@MainActivity, itemLists, Constants.data)
-                }else{
-                    Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
-                }
-            }
-            override fun onFailure(call: Call<Airtime>, t: Throwable) {
-                Toast.makeText(this@MainActivity,"error occur",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
             }
         })
     }
 
-    inner class getServices:AsyncTask<Void,Void,Void>(){
+    private fun getEducationList() {
+        val apiService = ServiceBuilder.buildService(ApiService::class.java)
+        val requestCall = apiService.getAirtimeService("education")
+        requestCall.enqueue(object : Callback<Airtime> {
+            override fun onResponse(call: Call<Airtime>, response: Response<Airtime>) {
+                if (response.isSuccessful) {
+                    val itemLists = response.body()!!
+                    main_educationList.adapter = ServiceAdapter(this@MainActivity, itemLists, Constants.education)
+                } else {
+                    Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Airtime>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    private fun getTVCableList() {
+        val apiService = ServiceBuilder.buildService(ApiService::class.java)
+        val requestCall = apiService.getAirtimeService("tv-subscription")
+        requestCall.enqueue(object : Callback<Airtime> {
+            override fun onResponse(call: Call<Airtime>, response: Response<Airtime>) {
+                if (response.isSuccessful) {
+                    val itemLists = response.body()!!
+                    main_tvCableList.adapter = ServiceAdapter(this@MainActivity, itemLists, Constants.tv)
+                } else {
+                    Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Airtime>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    private fun getElectricity() {
+        val apiService = ServiceBuilder.buildService(ApiService::class.java)
+        val requestCall = apiService.getAirtimeService("electricity-bill")
+        requestCall.enqueue(object : Callback<Airtime> {
+            override fun onResponse(call: Call<Airtime>, response: Response<Airtime>) {
+                if (response.isSuccessful) {
+                    val itemLists = response.body()!!
+                    main_electricityList.adapter = ServiceAdapter(this@MainActivity, itemLists, Constants.electricity)
+                } else {
+                    Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Airtime>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "error occur", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    private fun loadCurrentUserWalletBalance() {
+        Utils.databaseRef().child(Constants.users).child(Utils.currentUserID()).child("wallet_balance").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
+                    main_walletAmount.text = "NGN ${p0.value}"
+                }
+            }
+
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+        })
+    }
+
+    inner class getServices : AsyncTask<Void, Void, Void>() {
         override fun doInBackground(vararg p0: Void?): Void? {
+            loadCurrentUserWalletBalance()
             getAirtimeList()
             getDataList()
             getEducationList()

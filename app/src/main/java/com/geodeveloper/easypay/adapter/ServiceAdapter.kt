@@ -1,6 +1,5 @@
 package com.geodeveloper.easypay.adapter
 
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -12,10 +11,10 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.bumptech.glide.Glide
+import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
+import com.geodeveloper.easypay.activity.BuyAirtimeActivity
 import com.geodeveloper.easypay.models.airtime.Airtime
-import com.geodeveloper.paybills.helper.Utils
-import java.lang.Exception
 
 class ServiceAdapter(val context: Context, val itemLists: Airtime, val key: String) : RecyclerView.Adapter<ServiceAdapter.ViewHolder?>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,6 +34,19 @@ class ServiceAdapter(val context: Context, val itemLists: Airtime, val key: Stri
             Glide.with(context).load(item.image).into(holder.image)
             holder.title.text = item.name!!
         } catch (e: Exception) { }
+
+        holder.itemView.setOnClickListener {
+            when(key){
+                Constants.airtime ->{
+                    val intent = Intent(context, BuyAirtimeActivity::class.java)
+                    intent.putExtra("name", item.name)
+                    intent.putExtra("image", item.image)
+                    intent.putExtra("service_id", item.serviceID)
+                    context.startActivity(intent)
+                    Animatoo.animateSwipeLeft(context)
+                }
+            }
+        }
     }
 
     inner class ViewHolder(@NonNull itemView: View) : RecyclerView.ViewHolder(itemView) {

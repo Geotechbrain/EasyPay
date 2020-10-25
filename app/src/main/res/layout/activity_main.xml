@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.MainActivity">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
@@ -24,6 +33,7 @@
             app:title="@string/app_name" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested1"
@@ -72,11 +82,44 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+
+
+            <!--CardView for buy airtime label-->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Buy Airtime" />
+                android:elevation="0dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/airtime_img"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="@string/buy_airtime_image"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:textStyle="bold"
+                            style="@style/Text_Secondary_Regular"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/buy_airtime_label" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -99,12 +142,47 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+
+
+
+            <!--CardView for as buy data label-->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Buy Data Subscriptions" />
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:elevation="0dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/ic_gsm_data"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/buy_airtime_image"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textStyle="bold"
+                        style="@style/Text_Secondary_Regular"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/buy_data_label_txt" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -127,12 +205,45 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+
+
+            <!--CardView used for buy Education label-->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Buy Education" />
+                android:elevation="0dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/ic_school"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/buy_airtime_image"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textStyle="bold"
+                        style="@style/Text_Secondary_Regular"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/buy_education_label_txt" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -155,12 +266,44 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+
+
+            <!--CardView used for buy Buy TV cable label-->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Buy TV Cable" />
+                android:elevation="0dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/ic_cable_tv"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/buy_airtime_image"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textStyle="bold"
+                        style="@style/Text_Secondary_Regular"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/buy_tv_cable_label_txt" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -215,6 +358,19 @@
 
     </androidx.core.widget.NestedScrollView>
 
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:headerLayout="@layout/navigation_drawer_header"
+        app:menu="@menu/navigation_drawer_items"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         style="bottomNavigationStyle"
@@ -238,4 +394,4 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+</androidx.drawerlayout.widget.DrawerLayout>

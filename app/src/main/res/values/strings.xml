@@ -61,6 +61,7 @@
     <string name="continue_btn_txt">continue</string>
     <string name="phone_verify_header_txt">Phone Verification</string>
     <string name="verify_phone_guide">Enter your phone number below a code will be sent to you to verify your number</string>
+    <string name="menu_logout_title">Logout</string>
 
 
 </resources>

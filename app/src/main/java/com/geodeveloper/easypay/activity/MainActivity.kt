@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.geodeveloper.easypay.Constants
@@ -28,19 +29,22 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
-    /*   lateinit var toolbar: ActionBar*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*toolbar = supportActionBar!!
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)*/
+
+        //val topAppBar: androidx.appcompat.widget.Toolbar = findViewById(R.id.app_bar)
+        ///setSupportActionBar(topAppBar)
+
+
 
         //for airtime list
         main_airtimeList.setHasFixedSize(true)
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         main_airtimeList.layoutManager = layoutManager
+
         //for data list
         main_dataList.setHasFixedSize(true)
         val dataLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)

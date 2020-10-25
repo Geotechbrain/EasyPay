@@ -61,6 +61,15 @@
     <string name="continue_btn_txt">continue</string>
     <string name="phone_verify_header_txt">Phone Verification</string>
     <string name="verify_phone_guide">Enter your phone number below a code will be sent to you to verify your number</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="info_easypay_com">info@easypay.com</string>
+    <string name="easypay_phone_number">070XXXFXXXX</string>
+    <string name="app_logo_for_nav_header">app logo for nav header</string>
+    <string name="buy_airtime_image">Buy airtime image</string>
+    <string name="buy_airtime_label">Buy Airtime</string>
+    <string name="buy_data_label_txt">Buy Data Subscriptions</string>
+    <string name="buy_education_label_txt">Buy Education</string>
+    <string name="buy_tv_cable_label_txt">Buy TV Cable</string>
 
 
 </resources>

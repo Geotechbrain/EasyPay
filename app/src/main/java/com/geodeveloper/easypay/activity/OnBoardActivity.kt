@@ -16,9 +16,11 @@ class OnBoardActivity : AppCompatActivity() {
         isUserRegisteered()
         btnRegister.setOnClickListener {
             startActivity(Intent(this,RegistrationActivity::class.java))
+            finish()
         }
         btnLogin.setOnClickListener {
             startActivity(Intent(this,LoginActivity::class.java))
+            finish()
         }
     }
 
@@ -27,6 +29,7 @@ class OnBoardActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
+            finish()
         }
     }
 }

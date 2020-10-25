@@ -2,6 +2,7 @@ package com.geodeveloper.easypay.activity
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         FirebaseAuth.getInstance().addAuthStateListener {
            if (it.currentUser == null) {
+               startActivity(Intent(this,LoginActivity()::class.java))
                finish()
            }
         }

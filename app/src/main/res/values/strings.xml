@@ -65,6 +65,14 @@
     <string name="have_accountt">Already have an account?</string>
     <string name="create_one">Create one</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
-
+    <string name="contact_us">Contact Us</string>
+    <string name="info_easypay_com">info@easypay.com</string>
+    <string name="easypay_phone_number">070XXXFXXXX</string>
+    <string name="app_logo_for_nav_header">app logo for nav header</string>
+    <string name="buy_airtime_image">Buy airtime image</string>
+    <string name="buy_airtime_label">Buy Airtime</string>
+    <string name="buy_data_label_txt">Buy Data Subscriptions</string>
+    <string name="buy_education_label_txt">Buy Education</string>
+    <string name="buy_tv_cable_label_txt">Buy TV Cable</string>
 
 </resources>

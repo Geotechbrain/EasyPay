@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() {
 
         /*toolbar = supportActionBar!!
         val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)*/
+        
+        //set toobar
         setSupportActionBar(app_bar)
 
         //for airtime list

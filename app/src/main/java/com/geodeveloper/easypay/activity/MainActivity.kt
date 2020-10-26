@@ -38,9 +38,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        /*toolbar = supportActionBar!!
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)*/
+//        toolbar = supportActionBar!!
+//        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)*/
         
         //set toobar
         setSupportActionBar(app_bar)

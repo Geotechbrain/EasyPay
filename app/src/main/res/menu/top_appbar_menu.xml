@@ -13,4 +13,10 @@
         android:title="@string/menu_contact_title"
         android:contentDescription="@string/content_descrip_contact"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/logout"
+        android:title="@string/menu_logout_title"
+        android:contentDescription="@string/content_descrip_contact"
+        app:showAsAction="never" />
+
 </menu>

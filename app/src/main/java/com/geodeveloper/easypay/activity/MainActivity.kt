@@ -2,10 +2,13 @@ package com.geodeveloper.easypay.activity
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import android.widget.Toolbar
@@ -19,10 +22,12 @@ import com.geodeveloper.easypay.service.ApiService
 import com.geodeveloper.easypay.service.ServiceBuilder
 import com.geodeveloper.paybills.helper.Utils
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import dmax.dialog.SpotsDialog
+import kotlinx.android.synthetic.main.activity_buy_data.*
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,11 +38,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        toolbar = supportActionBar!!
+//        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)*/
+        
+        //set toobar
+        setSupportActionBar(app_bar)
 
 
         //val topAppBar: androidx.appcompat.widget.Toolbar = findViewById(R.id.app_bar)
         ///setSupportActionBar(topAppBar)
-
 
 
         //for airtime list
@@ -66,6 +75,13 @@ class MainActivity : AppCompatActivity() {
         main_electricityList.layoutManager = electricityLayoutManager
 
         getServices().execute()
+
+        FirebaseAuth.getInstance().addAuthStateListener {
+           if (it.currentUser == null) {
+               startActivity(Intent(this,LoginActivity()::class.java))
+               finish()
+           }
+        }
     }
 
     private fun getAirtimeList() {
@@ -187,5 +203,17 @@ class MainActivity : AppCompatActivity() {
             getElectricity()
             return null
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.top_appbar_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+           R.id.logout->FirebaseAuth.getInstance().signOut()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

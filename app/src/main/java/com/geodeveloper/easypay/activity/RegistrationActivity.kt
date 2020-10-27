@@ -47,6 +47,12 @@ class RegistrationActivity : AppCompatActivity() {
                 }
             }
         }
+
+        login_txt_btn.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun createAccount(fullname: String, email: String, password: String, number: String) {

@@ -39,11 +39,11 @@ class RegistrationActivity : AppCompatActivity() {
                 TextUtils.isEmpty(email) -> Toast.makeText(this,"email is required",Toast.LENGTH_LONG).show()
                 TextUtils.isEmpty(password) -> Toast.makeText(this,"password is required",Toast.LENGTH_LONG).show()
                 TextUtils.isEmpty(number) -> Toast.makeText(this,"number is required",Toast.LENGTH_LONG).show()
-                password.length <6 -> Toast.makeText(this,"enter 6 minimum character as password",Toast.LENGTH_LONG).show()
+                password.length < 6 -> Toast.makeText(this,"enter 6 minimum character as password",Toast.LENGTH_LONG).show()
                 password != confirmPassword -> Toast.makeText(this,"password not match",Toast.LENGTH_LONG).show()
                 else -> {
                     showProgress("please wait")
-                    createAccount(fullname,email,password,number)
+                    createAccount(fullname, email, password, number)
                 }
             }
         }

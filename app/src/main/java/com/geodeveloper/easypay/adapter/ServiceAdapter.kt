@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
 import com.geodeveloper.easypay.activity.BuyAirtimeActivity
-import com.geodeveloper.easypay.activity.DataVariationActivity
+import com.geodeveloper.easypay.activity.ServiceVariationActivity
 import com.geodeveloper.easypay.models.airtime.Airtime
 
 class ServiceAdapter(val context: Context, val itemLists: Airtime, val key: String) : RecyclerView.Adapter<ServiceAdapter.ViewHolder?>() {
@@ -47,9 +47,18 @@ class ServiceAdapter(val context: Context, val itemLists: Airtime, val key: Stri
                     Animatoo.animateSwipeLeft(context)
                 }
                 Constants.data ->{
-                    val intent = Intent(context, DataVariationActivity::class.java)
+                    val intent = Intent(context, ServiceVariationActivity::class.java)
+                    intent.putExtra("name", item.name)
+                    intent.putExtra("key",Constants.data)
+                    intent.putExtra("image", item.image)
+                    intent.putExtra("service_id", item.serviceID)
+                    context.startActivity(intent)
+                }
+                Constants.education ->{
+                    val intent = Intent(context, ServiceVariationActivity::class.java)
                     intent.putExtra("name", item.name)
                     intent.putExtra("image", item.image)
+                    intent.putExtra("key",Constants.education)
                     intent.putExtra("service_id", item.serviceID)
                     context.startActivity(intent)
                 }

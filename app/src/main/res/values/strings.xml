@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">EasyPay</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
     <string name="onBoard_txt_header">Payment Made Easy</string>
     <string name="onBoard_txt_body">Grow your business with EasyPay.
         The smartest and easiest way to pay bills and make payments

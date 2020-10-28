@@ -13,7 +13,11 @@ import android.view.View
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
 import com.geodeveloper.easypay.adapter.ServiceAdapter
@@ -22,6 +26,7 @@ import com.geodeveloper.easypay.service.ApiService
 import com.geodeveloper.easypay.service.ServiceBuilder
 import com.geodeveloper.paybills.helper.Utils
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -33,16 +38,20 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
+    private var drawerLayout: DrawerLayout? = null
+    private var navigatioView: NavigationView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Utils.databaseRef().child(Constants.users).child(Utils.currentUserID()).child(Constants.walletBalance).setValue("200000")
 //        toolbar = supportActionBar!!
 //        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)*/
         
         //set toobar
         setSupportActionBar(app_bar)
+        setupNavigation()
 
 
         //val topAppBar: androidx.appcompat.widget.Toolbar = findViewById(R.id.app_bar)
@@ -81,6 +90,37 @@ class MainActivity : AppCompatActivity() {
                startActivity(Intent(this,LoginActivity()::class.java))
                finish()
            }
+        }
+    }
+
+    private fun setupNavigation() {
+        drawerLayout = findViewById(R.id.main_drawer)
+        navigatioView = findViewById(R.id.main_nav_view)
+        navigatioView!!.setNavigationItemSelectedListener(this)
+        val drawerToggle = ActionBarDrawerToggle(this, drawerLayout, app_bar, R.string.drawer_open, R.string.drawer_close)
+        drawerLayout!!.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+    }
+    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+        when (p0.itemId) {
+            R.id.home -> {
+            //TODO
+            }
+        }
+
+        closeDrawer()
+        return false
+    }
+
+    private fun closeDrawer() {
+        drawerLayout!!.closeDrawer(GravityCompat.START)
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout!!.isDrawerOpen(GravityCompat.START))
+            closeDrawer()
+        else {
+            super.onBackPressed()
         }
     }
 
@@ -183,7 +223,7 @@ class MainActivity : AppCompatActivity() {
         Utils.databaseRef().child(Constants.users).child(Utils.currentUserID()).child("wallet_balance").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()) {
-                    main_walletAmount.text = "NGN ${p0.value}"
+                    main_walletAmount.text = "NGN ${p0.value.toString().toDouble()}"
                 }
             }
 
@@ -212,7 +252,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-           R.id.logout->FirebaseAuth.getInstance().signOut()
+           R.id.logout->
+           {
+               FirebaseAuth.getInstance().signOut()
+               val intent = Intent(this, OnBoardActivity::class.java)
+               intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+               startActivity(intent)
+           }
+
         }
         return super.onOptionsItemSelected(item)
     }

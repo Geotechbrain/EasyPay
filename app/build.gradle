@@ -60,5 +60,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
     implementation 'co.paystack.android:paystack:3.1.2'
+    implementation 'com.github.marlonlom:timeago:4.0.1'
+    implementation 'io.customerly:customerly-android-sdk:3.0.10'
 
 }

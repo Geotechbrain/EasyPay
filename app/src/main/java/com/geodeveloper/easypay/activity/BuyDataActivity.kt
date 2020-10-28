@@ -1,9 +1,6 @@
 package com.geodeveloper.easypay.activity
 
 import android.app.AlertDialog
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,11 +17,10 @@ import com.geodeveloper.easypay.models.transactionStatus.TransactionResponse
 import com.geodeveloper.easypay.service.ApiAuth
 import com.geodeveloper.easypay.service.ApiService
 import com.geodeveloper.easypay.service.ServiceBuilder
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_buy_airtime.*
 import kotlinx.android.synthetic.main.activity_buy_data.*
 import kotlinx.android.synthetic.main.insufficient_fund_dialogue.*
 import kotlinx.android.synthetic.main.response_result_dialogue.*

@@ -11,7 +11,7 @@ object Constants {
     const val transactions = "transactions"
     const val paymentGatewayKey = "payment_gateway_key"
     const val publicKey = "publicKey"
-
+const val userContactMessage = "user_contact_message"
     //keys
     const val airtime = "Airtime"
     const val data = "data"
@@ -20,6 +20,26 @@ object Constants {
     const val electricity = "electricity"
     const val fundWallet = "fund wallet"
 
+    //intent
+    const val number = "phoneNumber"
+    const val details ="details"
+    const val image ="image"
+    const val thumbnail ="thumbnail"
+    const val mediaType = "mediatype"
+    const val video = "video"
+    const val link ="link"
+    const val transactionType ="transaction_type"
+    const val token ="token"
+    const val meterNo ="meter_no"
+    const val meterHolderName ="meter_holder_name"
+    const val meterHolderAddress ="meter_holder_address"
+    const val cardNo ="card_no"
+    const val cardHolderName ="card_holder_name"
+    const val transactionName = "transaction_name"
+    const val amount = "amount"
+    const val transactionStatus = "transaction_status"
+    const val transactionID = "transaction_ID"
+    const val date = "date"
     //charges
     const val FLUTTERWAVE_NGN_CHARGE_PERCENT = 1.4
     const val EASYPAY_NGN_CHARGE_PERCENT = 2.0

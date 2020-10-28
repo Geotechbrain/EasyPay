@@ -21,6 +21,7 @@
         <activity android:name=".activity.BuyDataActivity" />
         <activity android:name=".activity.BuyEducationActivity" />
         <activity android:name=".activity.BuyTVSUBActivity" />
+        <activity android:name=".activity.TransactionDetailsActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login" />
@@ -28,7 +29,6 @@
         <activity android:name=".activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -78,5 +78,6 @@
     <string name="buy_tv_cable_label_txt">Buy TV Cable</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buy_electric_unit_label">Buy Electricity unit</string>
 
 </resources>

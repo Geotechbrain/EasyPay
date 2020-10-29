@@ -28,10 +28,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="8dp"
             android:contentDescription="@string/login_activity_logo_img"
             android:src="@drawable/easypay_logo" />
 
@@ -40,7 +40,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-
             android:textAppearance="@style/Text_Title_Large"
             android:textAlignment="center"
             android:text="@string/register_label_txt"/>
@@ -59,7 +58,6 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/fullName_txt_hint" />
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

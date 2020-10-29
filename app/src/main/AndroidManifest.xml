@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/easypay_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.EasyPay">
-        <activity android:name=".activity.PhoneVerificationActivity"></activity>
+        <activity android:name=".activity.FundwalletActivity"></activity>
+        <activity android:name=".activity.PhoneVerificationActivity" />
         <activity android:name=".activity.PinActivity" />
         <activity android:name=".activity.RegistrationActivity" />
         <activity android:name=".activity.LoginActivity" />

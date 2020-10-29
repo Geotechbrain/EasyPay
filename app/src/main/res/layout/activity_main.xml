@@ -63,6 +63,7 @@
                         app:rippleColor="@color/gray">
 
                         <LinearLayout
+                            android:id="@+id/main_fund_wallet"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical"

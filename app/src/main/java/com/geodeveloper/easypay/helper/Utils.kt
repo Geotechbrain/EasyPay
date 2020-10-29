@@ -21,6 +21,14 @@ object Utils {
     fun databaseRef(): DatabaseReference {
         return FirebaseDatabase.getInstance().reference
     }
+    fun getUserEmail(context: Context):String{
+        val userEmail = context.getSharedPreferences("USERPREF", Context.MODE_PRIVATE).getString("useremail","")
+        return userEmail!!
+    }
+    fun getUserName(context: Context):String{
+        val userName = context.getSharedPreferences("USERPREF", Context.MODE_PRIVATE).getString("userfullname","")
+        return userName!!
+    }
     fun showLoader(context: Context, title: String) {
         loader = SpotsDialog.Builder()
             .setContext(context)

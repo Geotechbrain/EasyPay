@@ -14,6 +14,7 @@ import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.content.edit
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,7 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
 import com.geodeveloper.easypay.adapter.ServiceAdapter
+import com.geodeveloper.easypay.model.UsersModel
 import com.geodeveloper.easypay.models.airtime.Airtime
 import com.geodeveloper.easypay.service.ApiService
 import com.geodeveloper.easypay.service.ServiceBuilder
@@ -45,7 +47,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Utils.databaseRef().child(Constants.users).child(Utils.currentUserID()).child(Constants.walletBalance).setValue("200000")
 //        toolbar = supportActionBar!!
 //        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)*/
         
@@ -90,6 +91,9 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                startActivity(Intent(this,LoginActivity()::class.java))
                finish()
            }
+        }
+        main_fund_wallet.setOnClickListener {
+            startActivity(Intent(this,FundwalletActivity::class.java))
         }
     }
 
@@ -262,5 +266,27 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setUserBasicInfo()
+    }
+
+    private fun setUserBasicInfo() {
+        Utils.databaseRef().child(Constants.users).child(Utils.currentUserID()).addListenerForSingleValueEvent(object :ValueEventListener{
+            override fun onDataChange(p0: DataSnapshot) {
+                val user = p0.getValue(UsersModel::class.java)
+                val pref = getSharedPreferences("USERPREF", Context.MODE_PRIVATE)
+                pref.edit {
+                    putString("userfullname", user!!.fullname)
+                    putString("useremail",user.email)
+                    apply()
+                }
+            }
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+        })
     }
 }

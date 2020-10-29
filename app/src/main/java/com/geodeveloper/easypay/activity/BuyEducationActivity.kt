@@ -315,6 +315,9 @@ class BuyEducationActivity : AppCompatActivity() {
                                         clipboard.setPrimaryClip(clip)
                                         Toast.makeText(this@BuyEducationActivity, "Token copied", Toast.LENGTH_LONG).show()
                                     }
+                                    mAlertDualogue.transaction_success_dialogue_cancel.setOnClickListener {
+                                        finish()
+                                    }
                                 }
                                 Constants.failed ->{
                                     //refund user

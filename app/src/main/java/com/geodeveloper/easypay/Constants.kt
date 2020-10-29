@@ -9,6 +9,8 @@ object Constants {
     const val users = "user"
     const val walletBalance = "wallet_balance"
     const val transactions = "transactions"
+    const val paymentGatewayKey = "payment_gateway_key"
+    const val publicKey = "publicKey"
 
     //keys
     const val airtime = "Airtime"
@@ -16,6 +18,7 @@ object Constants {
     const val education =  "education"
     const val tv = "tv"
     const val electricity = "electricity"
+    const val fundWallet = "fund wallet"
 
     //charges
     const val FLUTTERWAVE_NGN_CHARGE_PERCENT = 1.4

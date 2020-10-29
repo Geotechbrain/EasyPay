@@ -76,5 +76,7 @@
     <string name="buy_data_label_txt">Buy Data Subscriptions</string>
     <string name="buy_education_label_txt">Buy Education</string>
     <string name="buy_tv_cable_label_txt">Buy TV Cable</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

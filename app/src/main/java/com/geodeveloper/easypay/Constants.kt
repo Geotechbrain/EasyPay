@@ -11,7 +11,7 @@ object Constants {
     const val transactions = "transactions"
     const val paymentGatewayKey = "payment_gateway_key"
     const val publicKey = "publicKey"
-
+const val userContactMessage = "user_contact_message"
     //keys
     const val airtime = "Airtime"
     const val data = "data"

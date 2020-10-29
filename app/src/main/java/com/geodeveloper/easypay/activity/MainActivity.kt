@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
+import com.geodeveloper.easypay.fragment.ContactUsFragment
 import com.geodeveloper.easypay.fragment.HistoryFragment
 import com.geodeveloper.easypay.fragment.HomeFragment
 import com.geodeveloper.easypay.model.UsersModel
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import io.customerly.Customerly
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
             when(it.itemId){
                 R.id.home -> selectedFragment = HomeFragment()
                 R.id.transaction -> selectedFragment = HistoryFragment()
+                R.id.help -> selectedFragment = ContactUsFragment()
             }
             if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction().replace(R.id.main_container, selectedFragment!!).commit()
@@ -134,6 +137,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                     putString("useremail",user.email)
                     apply()
                 }
+                Customerly.configure(application, "a615c2fe")
+                Customerly.registerUser(user!!.email, user.user_id, user.fullname, null, null, {}, {})
             }
             override fun onCancelled(p0: DatabaseError) {
 

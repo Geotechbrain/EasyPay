@@ -21,11 +21,9 @@ import kotlinx.android.synthetic.main.d_verifiy_account_dialogue.*
 import java.lang.Exception
 
 class RegistrationActivity : AppCompatActivity() {
-    private var progess:ProgressDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
-        progess = ProgressDialog(this)
         Utils.databaseRef().child("test").setValue(true)
 
         register_btn.setOnClickListener {
@@ -42,7 +40,7 @@ class RegistrationActivity : AppCompatActivity() {
                 password.length <6 -> Toast.makeText(this,"enter 6 minimum character as password",Toast.LENGTH_LONG).show()
                 password != confirmPassword -> Toast.makeText(this,"password not match",Toast.LENGTH_LONG).show()
                 else -> {
-                    showProgress("please wait")
+                    Utils.showLoader(this,"please wait")
                     createAccount(fullname,email,password,number)
                 }
             }
@@ -70,20 +68,14 @@ class RegistrationActivity : AppCompatActivity() {
                         userDetailMap["reg_date"] = regDate
                         userDetailMap["wallet_balance"] = "0.0"
                         try {
-                            Utils.databaseRef().child(Constants.users).child(userID).setValue(userDetailMap).addOnSuccessListener { setUserInfo ->
+                            Utils.databaseRef().child(Constants.users).child(userID).setValue(userDetailMap).addOnSuccessListener {
                                 FirebaseAuth.getInstance().signOut()
-                                dismissProgress()
+                                Utils.dismissLoader()
                                 val mDialogueView = LayoutInflater.from(this).inflate(R.layout.d_verifiy_account_dialogue, null)
                                 val mBuilder = AlertDialog.Builder(this).setView(mDialogueView)
                                 val mAlertDualogue = mBuilder.show()
                                 mAlertDualogue.verify_dialogue_ok.setOnClickListener {
-                                    mAlertDualogue.dismiss()
-                                    val intent =  Intent(this, LoginActivity::class.java)
-                                    intent.putExtra("email",email)
-                                    startActivity(intent)
-                                }
-                                mAlertDualogue.setOnCancelListener {
-                                    mAlertDualogue.dismiss()
+                                    mAlertDualogue.cancel()
                                     val intent =  Intent(this, LoginActivity::class.java)
                                     intent.putExtra("email",email)
                                     startActivity(intent)
@@ -94,23 +86,11 @@ class RegistrationActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    dismissProgress()
+                    Utils.dismissLoader()
                     Toast.makeText(this,"Error occur",Toast.LENGTH_LONG).show()
 
                 }
             }
         } catch (e: Exception) { }
-    }
-    private fun showProgress(title:String){
-        if(!progess!!.isShowing){
-            progess!!.setTitle(title)
-            progess!!.setCancelable(false)
-            progess!!.show()
-        }
-    }
-    private fun dismissProgress(){
-        if(progess!!.isShowing){
-            progess!!.dismiss()
-        }
     }
 }

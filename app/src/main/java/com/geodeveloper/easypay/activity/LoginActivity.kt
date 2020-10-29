@@ -1,16 +1,14 @@
 package com.geodeveloper.easypay.activity
 
 import android.app.AlertDialog
-import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.widget.Toast
-import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.geodeveloper.easypay.R
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.d_verifiy_account_dialogue.*

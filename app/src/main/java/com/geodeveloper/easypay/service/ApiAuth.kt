@@ -3,7 +3,7 @@ package com.geodeveloper.easypay.service
 import android.util.Base64
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.model.AuthCred
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener

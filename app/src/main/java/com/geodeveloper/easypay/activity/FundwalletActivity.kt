@@ -15,11 +15,10 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
 import com.geodeveloper.easypay.model.UsersModel
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_buy_airtime.*
 import kotlinx.android.synthetic.main.activity_fundwallet.*
 import kotlinx.android.synthetic.main.transaction_successful_dialogue.*
 

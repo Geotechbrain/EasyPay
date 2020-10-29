@@ -11,14 +11,13 @@ import android.widget.Toast
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
 import com.geodeveloper.easypay.model.UsersModel
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import io.customerly.Customerly
 import kotlinx.android.synthetic.main.fragment_contact_us.*
 import kotlinx.android.synthetic.main.fragment_contact_us.view.*
-import java.lang.IllegalStateException
 
 @Suppress("DEPRECATION")
 class ContactUsFragment : Fragment() {

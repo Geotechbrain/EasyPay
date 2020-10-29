@@ -1,17 +1,13 @@
 package com.geodeveloper.easypay.activity
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.view.View
-import android.widget.Toast
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import kotlinx.android.synthetic.main.activity_transaction_details.*
 
 class TransactionDetailsActivity : AppCompatActivity() {

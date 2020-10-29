@@ -1,4 +1,4 @@
-package com.geodeveloper.paybills.helper
+package com.geodeveloper.easypay.helper
 
 import android.app.Activity
 import android.app.AlertDialog

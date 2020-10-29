@@ -20,7 +20,7 @@ import com.geodeveloper.easypay.models.transactionStatus.TransactionResponse
 import com.geodeveloper.easypay.service.ApiAuth
 import com.geodeveloper.easypay.service.ApiService
 import com.geodeveloper.easypay.service.ServiceBuilder
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener

@@ -2,7 +2,6 @@ package com.geodeveloper.easypay.helper
 
 import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.model.ChargesModel
-import com.geodeveloper.paybills.helper.Utils
 
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

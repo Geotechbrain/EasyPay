@@ -5,7 +5,6 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
@@ -14,8 +13,7 @@ import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
 import com.geodeveloper.easypay.activity.TransactionDetailsActivity
 import com.geodeveloper.easypay.model.TransactionHistoryModel
-import com.geodeveloper.paybills.helper.Utils
-import java.lang.Exception
+import com.geodeveloper.easypay.helper.Utils
 
 @Suppress("DEPRECATION")
 class TransactionHistoryAdapter  (val context: Context, val itemLists: ArrayList<TransactionHistoryModel>): RecyclerView.Adapter<TransactionHistoryAdapter.ViewHolder?>() {

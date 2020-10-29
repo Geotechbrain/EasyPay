@@ -16,8 +16,9 @@ import com.geodeveloper.easypay.R
 import com.geodeveloper.easypay.fragment.ContactUsFragment
 import com.geodeveloper.easypay.fragment.HistoryFragment
 import com.geodeveloper.easypay.fragment.HomeFragment
+import com.geodeveloper.easypay.fragment.ProfileFragment
 import com.geodeveloper.easypay.model.UsersModel
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -61,6 +62,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                 R.id.home -> selectedFragment = HomeFragment()
                 R.id.transaction -> selectedFragment = HistoryFragment()
                 R.id.help -> selectedFragment = ContactUsFragment()
+                R.id.profile -> selectedFragment = ProfileFragment()
             }
             if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction().replace(R.id.main_container, selectedFragment!!).commit()

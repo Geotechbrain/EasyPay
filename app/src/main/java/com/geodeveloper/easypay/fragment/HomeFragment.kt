@@ -1,7 +1,6 @@
 package com.geodeveloper.easypay.fragment
 
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,7 +15,7 @@ import com.geodeveloper.easypay.adapter.ServiceAdapter
 import com.geodeveloper.easypay.models.airtime.Airtime
 import com.geodeveloper.easypay.service.ApiService
 import com.geodeveloper.easypay.service.ServiceBuilder
-import com.geodeveloper.paybills.helper.Utils
+import com.geodeveloper.easypay.helper.Utils
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener

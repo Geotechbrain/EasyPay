@@ -82,9 +82,12 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     }
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when (p0.itemId) {
-            R.id.home -> {
-            //TODO
+            R.id.nav_home -> {
+                supportFragmentManager.beginTransaction().replace(R.id.main_container, HomeFragment()).commit()
             }
+            R.id.nav_transact ->  supportFragmentManager.beginTransaction().replace(R.id.main_container, HistoryFragment()).commit()
+            R.id.nav_help ->  supportFragmentManager.beginTransaction().replace(R.id.main_container, ContactUsFragment()).commit()
+            R.id.nav_profile ->  supportFragmentManager.beginTransaction().replace(R.id.main_container, ProfileFragment()).commit()
         }
 
         closeDrawer()

@@ -62,6 +62,14 @@ class ServiceAdapter(val context: Context, val itemLists: Airtime, val key: Stri
                     intent.putExtra("service_id", item.serviceID)
                     context.startActivity(intent)
                 }
+                Constants.tv ->{
+                    val intent = Intent(context, ServiceVariationActivity::class.java)
+                    intent.putExtra("name", item.name)
+                    intent.putExtra("image", item.image)
+                    intent.putExtra("key",Constants.tv)
+                    intent.putExtra("service_id", item.serviceID)
+                    context.startActivity(intent)
+                }
             }
         }
     }

@@ -20,6 +20,7 @@
         <activity android:name=".activity.ServiceVariationActivity" />
         <activity android:name=".activity.BuyDataActivity" />
         <activity android:name=".activity.BuyEducationActivity" />
+        <activity android:name=".activity.BuyTVSUBActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login" />

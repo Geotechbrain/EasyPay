@@ -13,6 +13,7 @@ import com.geodeveloper.easypay.Constants
 import com.geodeveloper.easypay.R
 import com.geodeveloper.easypay.activity.BuyDataActivity
 import com.geodeveloper.easypay.activity.BuyEducationActivity
+import com.geodeveloper.easypay.activity.BuyTVSUBActivity
 import com.geodeveloper.easypay.models.dataVariation.DataVariation
 
 class ServiceVariationAdapter(val context: Context, val itemLists: DataVariation, val key:String) : RecyclerView.Adapter<ServiceVariationAdapter.ViewHolder?>() {
@@ -43,6 +44,15 @@ class ServiceVariationAdapter(val context: Context, val itemLists: DataVariation
                 }
                 Constants.education ->{
                     val intent = Intent(context, BuyEducationActivity::class.java)
+                    intent.putExtra("service_id", itemLists.content.serviceID)
+                    intent.putExtra("variation_code", item.variation_code)
+                    intent.putExtra("amount", item.variation_amount)
+                    intent.putExtra("name", item.name)
+                    intent.putExtra("service_name", itemLists.content.ServiceName)
+                    context.startActivity(intent)
+                }
+                Constants.tv ->{
+                    val intent = Intent(context, BuyTVSUBActivity::class.java)
                     intent.putExtra("service_id", itemLists.content.serviceID)
                     intent.putExtra("variation_code", item.variation_code)
                     intent.putExtra("amount", item.variation_amount)
